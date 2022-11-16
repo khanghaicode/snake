@@ -69,7 +69,10 @@ void draw_apple(){
     cout<<'a';
 }
 int main(){
-    char key;
+    thua=false;
+    len=1;
+    snake.clear();
+    char key=NULL;
     while(!thua){
         system("cls");
         drawboard();
@@ -104,10 +107,16 @@ int main(){
         update_pos();
         insrtsnk();
         draw_snake();
-        if(posX==appleX&&posY==appleY)update_apple();//updateapple
+        if(posX==appleX&&posY==appleY)update_apple();
         draw_apple();
         Sleep(1);
     }
     system("cls");
-    cout<<"thua r";
+    cout<<"thua r"<<endl;
+    char select;
+    cout<<"r:choi lai"<<endl<<"q:thoat"<<endl;
+    cout<<"lus chon la: ";
+    cin>>select;
+    if(select=='q')return 0;
+    else main();
 }
